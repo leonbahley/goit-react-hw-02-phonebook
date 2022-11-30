@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 const ContactsList = ({ contacts, onClick }) => (
   <>
     <ul className="List">
@@ -13,4 +15,10 @@ const ContactsList = ({ contacts, onClick }) => (
     </ul>
   </>
 );
+
+ContactsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
+
 export default ContactsList;

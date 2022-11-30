@@ -6,13 +6,15 @@ class Form extends Component {
 
     number: '',
   };
+
   nameInputId = nanoid();
   telInputId = nanoid();
   handleChange = e =>
     this.setState({ [e.currentTarget.name]: e.currentTarget.value });
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state);
+    const id = nanoid();
+    this.props.onSubmit({ ...this.state, id });
     this.reset();
   };
   reset = () =>
