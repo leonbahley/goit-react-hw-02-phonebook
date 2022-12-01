@@ -24,11 +24,9 @@ export class App extends Component {
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
-  handleDelete = e => {
+  handleDelete = id => {
     this.setState({
-      contacts: this.state.contacts.filter(
-        contact => contact.id !== e.target.closest('li').id
-      ),
+      contacts: this.state.contacts.filter(contact => contact.id !== id),
     });
   };
   render() {
