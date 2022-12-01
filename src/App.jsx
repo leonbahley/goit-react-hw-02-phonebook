@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from './components/Form';
 import ContactsList from './components/ContactsList';
 import Filter from './components/Filter';
-import './components/Phonebook.css';
+import css from './components/Phonebook.module.css';
 export class App extends Component {
   state = {
     contacts: [],
@@ -34,7 +34,7 @@ export class App extends Component {
   render() {
     const filteredContacts = this.getFilteredContacts();
     return (
-      <div className="Phonebook">
+      <div className={css.Phonebook}>
         <h1>Phonebook</h1>
         <Form onSubmit={this.handleSubmit} />
         <h2>Contacts</h2>

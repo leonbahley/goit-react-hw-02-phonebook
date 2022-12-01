@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
+import css from './Phonebook.module.css';
+
 class Form extends Component {
   state = {
     name: '',
@@ -25,10 +27,10 @@ class Form extends Component {
     });
   render() {
     return (
-      <form className="Form" onSubmit={this.handleSubmit}>
+      <form className={css.Form} onSubmit={this.handleSubmit}>
         <label htmlFor={this.nameInputId}>Name</label>
         <input
-          className="FormInput"
+          className={css.FormInput}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -40,7 +42,7 @@ class Form extends Component {
         />
         <label htmlFor={this.telInputId}>Number</label>
         <input
-          className="FormInput"
+          className={css.FormInput}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -50,7 +52,7 @@ class Form extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button className="AddBtn" type="submit">
+        <button className={css.AddBtn} type="submit">
           Add contact
         </button>
       </form>
